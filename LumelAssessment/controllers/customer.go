@@ -16,15 +16,15 @@ func GetCustomers(c *gin.Context) {
 	pipeline := []bson.M{
 		{
 			"$group": bson.M{
-				"_id": "$customer_id", // Group by customer_id
+				"_id": "$customer_id",
 				"customer_name": bson.M{
-					"$first": "$customer_name", // Take the first customer_name
+					"$first": "$customer_name",
 				},
 				"customer_email": bson.M{
-					"$first": "$customer_email", // Take the first customer_email
+					"$first": "$customer_email",
 				},
 				"customer_address": bson.M{
-					"$first": "$customer_address", // Take the first customer_address
+					"$first": "$customer_address",
 				},
 			},
 		},
