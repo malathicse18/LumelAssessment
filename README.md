@@ -27,7 +27,23 @@ Before you begin, ensure you have the following software installed:
 ### Step 1: Clone the Repository
 
 Clone the project repository to your local machine:
+# Step 2: Install Dependencies
+
+To set up the necessary dependencies for the project, follow the steps below.
+
+## Install Go Dependencies
+
+Before you can run the application, you need to install the required Go dependencies. The primary dependency for this project is the **Gin** web framework.
+
+### Step 1: Install Gin Web Framework
+
+Use the following `go get` command to install the **Gin** framework:
+
+```bash
+go get -u github.com/gin-gonic/gin
+
 
 ```bash
 git clone <repository-url>
 cd LumelAssessment
+
