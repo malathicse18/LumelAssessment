@@ -21,26 +21,26 @@ func LoadCSVToDB(filename string) error {
 	// Get the absolute path of the CSV file
 	absPath, err := filepath.Abs(filename)
 	if err != nil {
-		return fmt.Errorf("❌ Error getting absolute file path: %v", err)
+		return fmt.Errorf("Error getting absolute file path: %v", err)
 	}
 
 	// Open the CSV file
 	file, err := os.Open(absPath)
 	if err != nil {
-		return fmt.Errorf("❌ Error opening file: %v", err)
+		return fmt.Errorf("Error opening file: %v", err)
 	}
 	defer file.Close()
 
 	reader := csv.NewReader(file)
 	records, err := reader.ReadAll()
 	if err != nil {
-		return fmt.Errorf("❌ Error reading CSV file: %v", err)
+		return fmt.Errorf("Error reading CSV file: %v", err)
 	}
 
 	var orders []interface{}
 	for i, record := range records {
 		if i == 0 {
-			continue // Skip CSV header row
+			continue 
 		}
 
 		// Convert numeric fields
@@ -49,7 +49,7 @@ func LoadCSVToDB(filename string) error {
 		discount, _ := strconv.ParseFloat(record[9], 64)
 		shippingCost, _ := strconv.ParseFloat(record[10], 64)
 
-		// Convert date format (ensure it matches CSV format)
+		// Convert date format 
 		dateOfSale, err := time.Parse("2006-01-02", record[6])
 		if err != nil {
 			log.Printf("⚠ Skipping record due to invalid date: %v", err)
@@ -83,7 +83,7 @@ func LoadCSVToDB(filename string) error {
 		if err != nil {
 			return fmt.Errorf("❌ Error inserting records: %v", err)
 		}
-		fmt.Println("✅ CSV data successfully inserted into MongoDB!")
+		fmt.Println("CSV data successfully inserted into MongoDB!")
 	} else {
 		fmt.Println("⚠ No valid records to insert.")
 	}
