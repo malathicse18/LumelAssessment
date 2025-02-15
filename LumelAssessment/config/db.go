@@ -19,15 +19,15 @@ func ConnectDB() {
 
 	client, err := mongo.Connect(ctx, clientOptions)
 	if err != nil {
-		log.Fatal("❌ MongoDB connection error:", err)
+		log.Fatal("MongoDB connection error:", err)
 	}
 
 	err = client.Ping(ctx, nil)
 	if err != nil {
-		log.Fatal("❌ MongoDB not responding:", err)
+		log.Fatal("MongoDB not responding:", err)
 	}
 
-	log.Println("✅ Connected to MongoDB")
+	log.Println("Connected to MongoDB")
 	DB = client.Database("salesdb")
 
 	// Ensure collection exists by inserting a dummy record
