@@ -1,0 +1,12 @@
+2025/02/15 18:26:39 🚀 Starting application...
+2025/02/15 18:26:39 ✅ Connected to MongoDB
+2025/02/15 18:26:39 ✅ Connected to MongoDB
+2025/02/15 18:26:39 ⚠ CSV Load Error: ❌ Error opening file: open C:\Users\malatk\Videos\LumelAssessment\LumelAssessment\data\data.csv: The system cannot find the file specified.
+2025/02/15 18:26:39 📡 Routes successfully registered
+2025/02/15 18:26:39 🚀 Server running on http://localhost:8080
+2025/02/15 18:31:12 🚀 Starting application...
+2025/02/15 18:31:12 ✅ Connected to MongoDB
+2025/02/15 18:31:12 ✅ Connected to MongoDB
+2025/02/15 18:31:12 ⚠ CSV Load Error: ❌ Error opening file: open C:\Users\malatk\Videos\LumelAssessment\LumelAssessment\data\data.csv: The system cannot find the file specified.
+2025/02/15 18:31:12 📡 Routes successfully registered
+2025/02/15 18:31:12 🚀 Server running on http://localhost:8080
