@@ -1,62 +1,33 @@
-# Lumel Assessment
+# LumelAssessment Project
 
-## Overview
-Lumel Assessment is a Go-based web application designed to handle sales data analytics. It connects to a MongoDB database to store and retrieve sales-related data. The application provides APIs for revenue calculations, product analytics, and customer insights, as well as a data refresh feature for loading CSV data into the database.
+This project implements a web application using the Gin framework, MongoDB, and CSV file import functionality. It provides APIs for managing orders, products, and customers, as well as calculating revenue based on the order data.
 
-LumelAssessment/
-│── 📂 config/          # Configuration files (DB connection)
-│   ├── db.go          # MongoDB connection setup
-│── 📂 models/          # Structs for MongoDB documents
-│   ├── order.go       # Order model
-│   ├── customer.go    # Customer model
-│   ├── product.go     # Product model
-│── 📂 routes/          # API routes
-│   ├── revenue.go     # Revenue-related routes
-    ├── refresh.go
-│   ├── product.go     # Product-related routes
-│   ├── customer.go    # Customer-related routes
-│── 📂 controllers/     # Business logic & handlers
-│   ├── revenue.go     # Revenue calculations
-│   ├── product.go     # Product analytics
-│   ├── customer.go    # Customer analytics
-│   ├── refresh.go     # Data refresh controller
-│── 📂 services/        # Helper functions & services
-│   ├── revenue.go     # Revenue calculations logic
-│   ├── csv_loader.go  # CSV loading and parsing logic
-│── 📂 utils/           # Utility functions
-│   ├── logger.go      # Logging helper
-│── 📂 data/            # Folder for CSV files
-│   ├── data.csv # Example sales CSV
-│── main.go            # Entry point
-│── go.mod             # Go module file
-│── README.md          # Documentation   
+## Prerequisites
 
+Before you begin, ensure you have the following software installed:
 
----
+- **Go** (version 1.22.5 or higher)
+  - To check the version: `go version`
+  - If not installed, follow the instructions from [Go's official site](https://go.dev/doc/install)
+  
+- **MongoDB** (version v7.0.9 or higher)
+  - Ensure MongoDB is running locally on port `27017` or configure the database connection as needed.
 
-## Features
+- **Gin Framework** (Go web framework)
+  - Install the Gin package using the following command:
+    ```bash
+    go get -u github.com/gin-gonic/gin
+    ```
 
-1. **Revenue Calculation API**: 
-   - Endpoint: `/revenue`
-   - Returns total revenue based on orders stored in the database.
+- **CSV File** (`data/data.csv`)
+  - The project expects a CSV file containing order data to be loaded into MongoDB. Ensure that `data/data.csv` is available and formatted correctly.
 
-2. **Product Analytics API**: 
-   - Endpoint: `/products`
-   - Retrieves a list of products and their details.
+## Setup
 
-3. **Customer Analytics API**: 
-   - Endpoint: `/customers`
-   - Fetches customer data from the database.
+### Step 1: Clone the Repository
 
-4. **CSV Data Refresh API**: 
-   - Endpoint: `/refresh`
-   - Allows loading and refreshing sales data from a CSV file into the MongoDB database.
+Clone the project repository to your local machine:
 
----
-
-## Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/LumelAssessment.git
-   cd LumelAssessment
+```bash
+git clone <repository-url>
+cd LumelAssessment
